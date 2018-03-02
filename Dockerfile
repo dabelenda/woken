@@ -69,7 +69,7 @@ RUN adduser -D -u 1000 woken \
     && chmod +x /opt/woken/woken.sh \
     && ln -s /opt/woken/woken.sh /run.sh \
     && chown -R woken:woken /opt/woken \
-    && apk add --update --no-cache curl
+    && apk add --update --no-cache curl strace
 
 COPY --from=scala-build-env /build/target/scala-2.11/woken-all.jar /opt/woken/woken.jar
 
